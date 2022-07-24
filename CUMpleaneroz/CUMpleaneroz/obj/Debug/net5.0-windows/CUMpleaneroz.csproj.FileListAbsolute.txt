@@ -1,8 +1,0 @@
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.csproj.AssemblyReference.cache
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.CUMpleanero.resources
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.CUMpleanero.es-US.resources
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.csproj.GenerateResource.cache
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.AssemblyInfoInputs.cache
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.AssemblyInfo.cs
-C:\Users\anavi\Desktop\Projects\CUMpleañero\CUMpleanero\CUMpleaneroz\CUMpleaneroz\obj\Debug\net5.0-windows\CUMpleaneroz.csproj.CoreCompileInputs.cache

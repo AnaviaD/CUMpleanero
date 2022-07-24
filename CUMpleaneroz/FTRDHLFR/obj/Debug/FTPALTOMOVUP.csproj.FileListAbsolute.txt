@@ -1,0 +1,15 @@
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.FTPAltoMovup.resources
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.Properties.Resources.resources
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.csproj.GenerateResource.cache
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.csproj.CoreCompileInputs.cache
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\bin\Debug\FTPALTOMOVUP.exe.config
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\bin\Debug\FTPALTOMOVUP.exe.manifest
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\bin\Debug\FTPALTOMOVUP.application
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\bin\Debug\FTPALTOMOVUP.exe
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\bin\Debug\FTPALTOMOVUP.pdb
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\bin\Debug\WinSCPnet.dll
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.exe.manifest
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.application
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.exe
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.pdb
+D:\FtpClientcs\FTPClient\FTPALTOMOVUP\obj\Debug\FTPALTOMOVUP.csproj.AssemblyReference.cache
