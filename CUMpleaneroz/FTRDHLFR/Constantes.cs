@@ -8,6 +8,7 @@ namespace CUMpleanero
 {
     public class Constantes
     {
+
         #region Variables & Constantes
             public const string _xServidorBD = "SRVFTRDB1";//"SRVFTRDB1";
             public const string _xNombreBD = "X_FTR";
