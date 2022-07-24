@@ -22,6 +22,7 @@
     using OfficeOpenXml;
     using System.Xml.Serialization;
     using System.Xml;
+using FTRDHLFR;
 #endregion
 
 namespace CUMpleanero
@@ -35,7 +36,7 @@ namespace CUMpleanero
 
         //private WebClient _xWebClient;
         //private ArchivosDescarga _ArchivosDescarga;
-        private string _xFolderPath;
+        //private string _xFolderPath;
         //private string _xNombreXML;
         //private string _xHTMLPass;
         private int _xManual;
@@ -46,9 +47,11 @@ namespace CUMpleanero
         #region Constructor
         public CUMpleanero()
         {
+            //server = DESKTOP - FP59UDN\\SQLEXPRESS; database = x_FTR; Trusted_Connection = true
+            //string _xServerName, string _xNombreBD, string _xTrustedConnection
             InitializeComponent();
-            this.CargarConexion(Constantes._xServidorBD, Constantes._xNombreBD, Constantes._xUsuarioBD, Constantes._xPassWordBD);
-            this.CargarConexion2(Constantes._xServidorBD2, Constantes._xNombreBD2, Constantes._xUsuarioBD2, Constantes._xPassWordBD2);
+            this.CargarConexion(Constantes._xServidorBD, Constantes._xNombreBD, Constantes._xTrusted_Connection);
+            //this.CargarConexion2(Constantes._xServidorBD2, Constantes._xNombreBD2, Constantes._xUsuarioBD2, Constantes._xPassWordBD2);
         }
         #endregion
 
@@ -113,7 +116,6 @@ namespace CUMpleanero
                     //this.Proceso();
                     this._xManual = 0;
                     this.tmr_manual.Stop();
-                    //this.UploadFiles();
                     Thread.Sleep(400);
                     this.btn_actuaizar.Enabled = true;
                 }
@@ -125,9 +127,17 @@ namespace CUMpleanero
                 this.btn_actuaizar.Enabled = true;
             }
         }
-        private void CargarConexion(string _xServerName, string _xNombreBD, string _xUser, string _xPassword)
+        public void CargarConexion(string _xServerName, string _xNombreBD, string _xTrustedConnection)
         {
-            this._xConnString.ConnectionString = string.Format("data source = {0}; initial catalog = {1}; User Id={2}; Password = {3};", new object[] { _xServerName, _xNombreBD, _xUser, _xPassword });
+            //server = DESKTOP - FP59UDN\\SQLEXPRESS; database = x_FTR; Trusted_Connection = true
+            try
+            {
+                this._xConnString.ConnectionString = string.Format("server = {0}; database = {1}; Trusted_Connection = {2};", new object[] { _xServerName, _xNombreBD, _xTrustedConnection});
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         private void CargarConexion2(string _xServerName, string _xNombreBD, string _xUser, string _xPassword)
         {
@@ -182,59 +192,77 @@ namespace CUMpleanero
 
 
 
-        private void VerificaAlToque()
+        public void VerificaAlToque()
         {
+
 
             try
             {
-                // Setup session options
-
-                bool allDirExists = System.IO.Directory.Exists(@"\\10.1.1.30\e$\Attachments");
-
-                if (allDirExists)
-                {
-
-                    var amazonDirectories = @"\\10.1.1.30\e$\Attachments\sftr-amazon";
-                    //var testDirectories = @"C:\Users\eanavia\Desktop\FTRDHL\Formatos\Test";
-
-
-                    bool amazonDirexists = System.IO.Directory.Exists(amazonDirectories);
-                    //bool testDirexists = System.IO.Directory.Exists(testDirectories);
-
-                    //if (testDirexists)
-                    //{
-                    //    FileInfo[] testFiles = (new DirectoryInfo(testDirectories)).GetFiles();
-                    //    if (testFiles.Length > 0)
-                    //        GetXml_Files();
-                    //}
-
-                    if (amazonDirexists)
-                    {
-                        FileInfo[] amazonFiles = (new DirectoryInfo(amazonDirectories)).GetFiles();
-                        if (amazonFiles.Length > 0)
-                            Console.WriteLine("Hey hola");
-                        this.ltb_log.Items.Add(string.Format("{0} - Proceso Completado...", DateTime.Now));
-                        this.ltb_log.Items.Add("");
-                    }
-
-                }
-
-
-                this.ltb_log.Items.Add(string.Format("{0} - Proceso Completado...", DateTime.Now));
+                //StartCheck
+                HoyCumplesAnos hca = new HoyCumplesAnos();
+                hca.StartCheck();
+                this.ltb_log.Items.Add(string.Format("{0} - {1}", DateTime.Now, hca.ConsoladeSalida));
                 this.ltb_log.Items.Add("");
-                //this.ltb_log.SelectedIndex = this.ltb_log.Items.Count - 1;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                string erro = ex.ToString();
-                //ACTUALIZAMOS EL ESTATUS DE LA TRANSACCION A ENVIADO.
-                //ActualizaTransaccionEnviado(_fName.Substring(7, 11));
 
-                this.ltb_log.Items.Add(string.Format("{0} - Error en la operacion Leer Carpetas...", erro));
-                this.ltb_log.Items.Add("");
-                //this.ltb_log.SelectedIndex = this.ltb_log.Items.Count - 1;
-                //MessageBox.Show(ex.Message, "FTP error de componente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+
+
+
+
+            //try
+            //{
+            //    // Setup session options
+
+            //    bool allDirExists = System.IO.Directory.Exists(@"\\10.1.1.30\e$\Attachments");
+
+            //    if (allDirExists)
+            //    {
+
+            //        var amazonDirectories = @"\\10.1.1.30\e$\Attachments\sftr-amazon";
+            //        //var testDirectories = @"C:\Users\eanavia\Desktop\FTRDHL\Formatos\Test";
+
+
+            //        bool amazonDirexists = System.IO.Directory.Exists(amazonDirectories);
+            //        //bool testDirexists = System.IO.Directory.Exists(testDirectories);
+
+            //        //if (testDirexists)
+            //        //{
+            //        //    FileInfo[] testFiles = (new DirectoryInfo(testDirectories)).GetFiles();
+            //        //    if (testFiles.Length > 0)
+            //        //        GetXml_Files();
+            //        //}
+
+            //        if (amazonDirexists)
+            //        {
+            //            FileInfo[] amazonFiles = (new DirectoryInfo(amazonDirectories)).GetFiles();
+            //            if (amazonFiles.Length > 0)
+            //                Console.WriteLine("Hey hola");
+            //            this.ltb_log.Items.Add(string.Format("{0} - Proceso Completado...", DateTime.Now));
+            //            this.ltb_log.Items.Add("");
+            //        }
+
+            //    }
+
+
+            //    this.ltb_log.Items.Add(string.Format("{0} - Proceso Completado...", DateTime.Now));
+            //    this.ltb_log.Items.Add("");
+            //    //this.ltb_log.SelectedIndex = this.ltb_log.Items.Count - 1;
+            //}
+            //catch (Exception ex)
+            //{
+            //    string erro = ex.ToString();
+            //    //ACTUALIZAMOS EL ESTATUS DE LA TRANSACCION A ENVIADO.
+            //    //ActualizaTransaccionEnviado(_fName.Substring(7, 11));
+
+            //    this.ltb_log.Items.Add(string.Format("{0} - Error en la operacion Leer Carpetas...", erro));
+            //    this.ltb_log.Items.Add("");
+            //    //this.ltb_log.SelectedIndex = this.ltb_log.Items.Count - 1;
+            //    //MessageBox.Show(ex.Message, "FTP error de componente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
 
         }
     }
