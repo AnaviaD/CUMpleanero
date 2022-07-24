@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FTRDHLFR.exe" size="1290240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FTRDHLFR.exe" size="1290752">
       <assemblyIdentity name="FTRDHLFR" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7JGK5Ijk2Rxnfbg6hWHS4Y/TVKHcQQN+jylSWs018jo=</dsig:DigestValue>
+        <dsig:DigestValue>gIcQIQbY0ta37E9gUMbk/79zjpD6y9Ezk6KUDzpp2N4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
