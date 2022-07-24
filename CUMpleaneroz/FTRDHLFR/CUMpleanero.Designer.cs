@@ -1,6 +1,6 @@
-﻿namespace FTRDHLFR
+﻿namespace CUMpleanero
 {
-    partial class FTRDHLFR
+    partial class CUMpleanero
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FTRDHLFR));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CUMpleanero));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ltb_log = new System.Windows.Forms.ListBox();
             this.pgb_Progreso = new System.Windows.Forms.ProgressBar();
@@ -113,7 +113,7 @@
             this.tmr_envio.Enabled = true;
             this.tmr_envio.Interval = 50000;
             // 
-            // FTRDHLFR
+            // CUMpleanero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -121,9 +121,9 @@
             this.Controls.Add(this.groupBox1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FTRDHLFR";
+            this.Name = "CUMpleanero";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "SFTP FTR";
+            this.Text = "CUMpleañero";
             this.Load += new System.EventHandler(this.SFTP_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

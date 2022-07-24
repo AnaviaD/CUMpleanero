@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Net.Mail;
 using System.IO;
 
-namespace FTRDHLFR
+namespace CUMpleanero
 {
     class SendMail
     {

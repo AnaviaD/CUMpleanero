@@ -97,19 +97,19 @@
     <Compile Include="Constantes.cs" />
     <Compile Include="EntintDHLFields.cs" />
     <Compile Include="EntityStellantis.cs" />
-    <Compile Include="FTRDHLFR.cs">
+    <Compile Include="CUMpleanero.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FTRDHLFR.Designer.cs">
-      <DependentUpon>FTRDHLFR.cs</DependentUpon>
+    <Compile Include="CUMpleanero.Designer.cs">
+      <DependentUpon>CUMpleanero.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions\ProcesoExcelX.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SendMail.cs" />
     <Compile Include="XMLMerc.cs" />
-    <EmbeddedResource Include="FTRDHLFR.resx">
-      <DependentUpon>FTRDHLFR.cs</DependentUpon>
+    <EmbeddedResource Include="CUMpleanero.resx">
+      <DependentUpon>CUMpleanero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
