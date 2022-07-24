@@ -44,7 +44,7 @@ namespace FTRDHLFR
             try
             {
                 DataTable dt = new DataTable();
-                string sentencia = string.Format("SELECT [idCliente],[nombre], [fechaNacimiento] FROM [Recursos].[dbo].[baseClientesHackaton2022] ");
+                string sentencia = string.Format("SELECT [idCliente],[nombre], [fechaNacimiento] FROM [Recursos].[dbo].[baseClientesHackaton2022] WHERE MONTH(fechaNacimiento) = DATEPART(MONTH,getdate())");
                 this._xConnString.Open();
 
                 SqlDataAdapter dataAda = new SqlDataAdapter(sentencia, this._xConnString);
