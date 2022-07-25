@@ -95,6 +95,7 @@
   <ItemGroup>
     <Compile Include="ArchivosDescarga.cs" />
     <Compile Include="Constantes.cs" />
+    <Compile Include="CumpleaneroEntity.cs" />
     <Compile Include="EntintDHLFields.cs" />
     <Compile Include="EntityStellantis.cs" />
     <Compile Include="CUMpleanero.cs">
