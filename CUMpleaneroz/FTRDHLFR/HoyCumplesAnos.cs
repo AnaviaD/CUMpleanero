@@ -45,7 +45,7 @@ namespace FTRDHLFR
             try
             {
                 DataTable dt = new DataTable();
-                string sentencia = string.Format("SELECT TOP 20 [idCliente],[nombre], [fechaNacimiento] FROM [Recursos].[dbo].[baseClientesHackaton2022] WHERE MONTH(fechaNacimiento) = DATEPART(MONTH,getdate())");
+                string sentencia = string.Format("SELECT TOP 20 [idCliente],[nombre], [fechaNacimiento] FROM [Recursos].[dbo].[baseClientesHackaton2022] WHERE MONTH(fechaNacimiento) = DATEPART(MONTH,getdate()) ORDER BY fechaNacimiento ASC");
                 this._xConnString.Open();
 
                 SqlDataAdapter dataAda = new SqlDataAdapter(sentencia, this._xConnString);
@@ -72,6 +72,11 @@ namespace FTRDHLFR
             
         }
 
+
+        #region privateRegion
+        //Problema resuelto con el order bu date de sql pero esta bueno para ejercicio de orden de listas 
+        //Problema resuelto con el order bu date de sql pero esta bueno para ejercicio de orden de listas 
+        //Problema resuelto con el order bu date de sql pero esta bueno para ejercicio de orden de listas 
         public DataTable OrdenarCumpleañosPorFecha(DataTable dtTable)
         {
             DataTable dataTable = new DataTable();
@@ -112,6 +117,7 @@ namespace FTRDHLFR
 
             return dtTable;
         }
+        #endregion
 
         public string HacerStringParaHtmlMail(DataTable dtTable)
         {
