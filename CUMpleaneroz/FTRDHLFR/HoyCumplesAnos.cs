@@ -140,7 +140,7 @@ namespace FTRDHLFR
                     //var cultureInfo = new CultureInfo("es-ES");
                     string datehoy = e.ItemArray[2].ToString();
                     var parsedDate = DateTime.Parse(datehoy);
-                    CollageMensajes += String.Format("<td>  {0}</td> {1}", parsedDate.Day, "<tr/>");
+                    CollageMensajes += String.Format("<td>  {0} - {1}</td> {2}", parsedDate.Day, parsedDate.ToString("MMMM"), "<tr/>");
                 }
             }
             return CollageMensajes;
