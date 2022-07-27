@@ -50,7 +50,7 @@ namespace CUMpleanero
             //server = DESKTOP - FP59UDN\\SQLEXPRESS; database = x_FTR; Trusted_Connection = true
             //string _xServerName, string _xNombreBD, string _xTrustedConnection
             InitializeComponent();
-            this.CargarConexion(Constantes._xServidorBD, Constantes._xNombreBD, Constantes._xTrusted_Connection);
+            this.CargarConexion(Constantes._xServidorBD, Constantes._xNombreBD, Constantes._xUsuarioBD, Constantes._xPassWordBD);
             //this.CargarConexion2(Constantes._xServidorBD2, Constantes._xNombreBD2, Constantes._xUsuarioBD2, Constantes._xPassWordBD2);
         }
         #endregion
@@ -127,12 +127,12 @@ namespace CUMpleanero
                 this.btn_actuaizar.Enabled = true;
             }
         }
-        public void CargarConexion(string _xServerName, string _xNombreBD, string _xTrustedConnection)
+        public void CargarConexion(string _xServerName, string _xNombreBD, string _xUser, string _xPassword)
         {
             //server = DESKTOP - FP59UDN\\SQLEXPRESS; database = x_FTR; Trusted_Connection = true
             try
             {
-                this._xConnString.ConnectionString = string.Format("server = {0}; database = {1}; Trusted_Connection = {2};", new object[] { _xServerName, _xNombreBD, _xTrustedConnection});
+                this._xConnString.ConnectionString = string.Format("data source = {0}; initial catalog = {1}; User Id={2}; Password = {3};", new object[] { _xServerName, _xNombreBD, _xUser, _xPassword });
             }
             catch (Exception)
             {

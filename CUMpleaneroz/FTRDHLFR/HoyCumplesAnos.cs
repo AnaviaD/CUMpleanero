@@ -15,16 +15,16 @@ namespace FTRDHLFR
         public string ConsoladeSalida = "";
         public HoyCumplesAnos()
         {
-            this.CargarConexion(Constantes._xServidorBD, Constantes._xNombreBD, Constantes._xTrusted_Connection);
+            this.CargarConexion(Constantes._xServidorBD, Constantes._xNombreBD, Constantes._xUsuarioBD, Constantes._xPassWordBD);
         }
 
 
-        public void CargarConexion(string _xServerName, string _xNombreBD, string _xTrustedConnection)
+        public void CargarConexion(string _xServerName, string _xNombreBD, string _xUser, string _xPassword)
         {
             //server = DESKTOP - FP59UDN\\SQLEXPRESS; database = x_FTR; Trusted_Connection = true
             try
             {
-                this._xConnString.ConnectionString = string.Format("server = {0}; database = {1}; Trusted_Connection = {2};", new object[] { _xServerName, _xNombreBD, _xTrustedConnection });
+                this._xConnString.ConnectionString = string.Format("data source = {0}; initial catalog = {1}; User Id={2}; Password = {3};", new object[] { _xServerName, _xNombreBD, _xUser, _xPassword });
             }
             catch (Exception)
             {
@@ -45,7 +45,7 @@ namespace FTRDHLFR
             try
             {
                 DataTable dt = new DataTable();
-                string sentencia = string.Format("SELECT TOP 20 [idCliente],[nombre], [fechaNacimiento] FROM [Recursos].[dbo].[baseClientesHackaton2022] WHERE MONTH(fechaNacimiento) = DATEPART(MONTH,getdate()) ORDER BY fechaNacimiento ASC");
+                string sentencia = string.Format("SELECT TOP 2000 [empl_id],[name], [fec_naci],[status] FROM [x_FTR].[dbo].[em] WHERE status <> 'TER' AND MONTH([fec_naci]) = DATEPART(MONTH,getdate())  ORDER BY DAY([fec_naci]) ASC");
                 this._xConnString.Open();
 
                 SqlDataAdapter dataAda = new SqlDataAdapter(sentencia, this._xConnString);
@@ -61,7 +61,7 @@ namespace FTRDHLFR
                 }
 
                 this.ConsoladeSalida = "La lista se pude leer, creo";
-                dt = OrdenarCumpleañosPorFecha(dt);
+                //dt = OrdenarCumpleañosPorFecha(dt);
                 FinalCollage = HacerStringParaHtmlMail(dt);
                 this.ConsoladeSalida = FinalCollage;
             }
